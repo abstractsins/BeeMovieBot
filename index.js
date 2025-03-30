@@ -1,4 +1,6 @@
 require('dotenv').config();
+const express = require('express');
+const app = express();
 const { Client, GatewayIntentBits } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
@@ -41,4 +43,13 @@ client.on('messageCreate', message => {
         });
     }
 });
+
 client.login(TOKEN);
+
+app.get('/', (req, res) => {
+    res.send('Bot is alive!');
+});
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Health check server running');
+});
