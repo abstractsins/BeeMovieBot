@@ -36,10 +36,10 @@ client.on('messageCreate', message => {
     // Another command
     if (message.content === '!beemovie') {
         beeScriptArr.forEach(section => {
-            console.log(section);
-            setTimeout(function () {
-                message.reply(section);
-            }, 500);
+            // console.log(section);
+            // setTimeout(function () {
+            message.reply(section);
+            // }, 500);
         });
     }
 });
